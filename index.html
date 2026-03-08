@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Operator | We gave AI a body</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-dim: #666666;
+            --accent: #000000;
+            --border: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 5.5rem;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 750px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem;
+        }
+
+        .logo-main {
+            height: 48px;
+            width: auto;
+        }
+
+        .bg-hand {
+            position: absolute;
+            right: -5%;
+            bottom: -5%;
+            height: 80vh;
+            width: auto;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.8;
+            filter: saturate(0.8);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4.5rem;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            height: 28px;
+            width: auto;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 968px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .partner-logos {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <img src="./logohocrop.png" alt="Human Operator" class="logo-main">
+    </div>
+
+    <img src="./handproduct.png" class="bg-hand" alt="Human Operator Product">
+
+    <div class="container">
+        <h1>We gave AI a body.</h1>
+        <p>Human Operator is a human augmentation tool that allows AI to briefly take control of your body to help you
+            learn or do things you cannot do.</p>
+    </div>
+
+    <div class="footer">
+        <img src="./designintelllogo.png" alt="Design Intell" class="partner-logo">
+        <img src="./hardmodelogo.png" alt="Hard Mode" class="partner-logo">
+        <img src="./advancinghumansai.png" alt="Advancing Humans" class="partner-logo">
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

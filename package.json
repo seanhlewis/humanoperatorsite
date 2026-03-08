@@ -1,0 +1,10 @@
+{
+    "name": "media-hack-website",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Premium Minimal Website",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
