@@ -11,6 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <style>
         :root {
             --bg: #ffffff;
@@ -30,9 +36,9 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
-            overflow: hidden;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
@@ -42,28 +48,49 @@
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
             color: var(--accent);
-            font-size: 5.5rem;
+            font-size: 6rem;
             line-height: 1.05;
             margin-bottom: 2rem;
             letter-spacing: -0.04em;
         }
 
-        p {
-            font-size: 1.4rem;
-            color: var(--text-dim);
-            max-width: 750px;
-            font-weight: 400;
-            line-height: 1.6;
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 4rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
         }
 
-        .container {
+        p {
+            font-size: 1.6rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        section {
+            width: 100%;
+            padding: 10rem 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            flex-grow: 1;
-            padding: 2rem;
             text-align: center;
+            position: relative;
+        }
+
+        .hero-section {
+            height: 100vh;
+            justify-content: center;
+        }
+
+        .hero-section p {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .nav {
@@ -72,47 +99,138 @@
             left: 0;
             width: 100%;
             padding: 3rem;
+            z-index: 10;
         }
 
         .logo-main {
-            height: 48px;
+            height: 52px;
             width: auto;
         }
 
         .bg-hand {
             position: absolute;
-            right: -5%;
-            bottom: -5%;
-            height: 80vh;
+            right: -2%;
+            top: 25%;
+            height: 85vh;
             width: auto;
             z-index: -1;
             pointer-events: none;
-            opacity: 0.8;
+            opacity: 0.7;
             filter: saturate(0.8);
         }
 
-        .footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 4rem;
+        .logo-row {
+            padding: 8rem 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4.5rem;
+            gap: 8rem;
             flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
+
         .partner-logo {
-            height: 28px;
+            height: 54px;
+            /* Even bigger */
             width: auto;
-            opacity: 0.4;
-            transition: opacity 0.3s;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.3s;
         }
 
         .partner-logo:hover {
             opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .narrative-section {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 4rem auto;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+            background: #000;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .bites {
+            margin: 6rem 0;
+            font-size: 2.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        footer {
+            padding: 10rem 2rem 6rem;
+            /* Reduced bottom padding */
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            /* Reduced gap */
+            border-top: 1px solid var(--border);
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footer-content {
+            text-align: left;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .github-link {
+            color: var(--text-dim);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .github-link:hover {
+            color: var(--text);
+            transform: scale(1.1);
+        }
+
+        .team-credits {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .team-credits a {
+            font-size: 1rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .team-credits a:hover {
+            text-decoration: underline;
+            color: var(--text);
         }
 
         @media (max-width: 968px) {
@@ -120,13 +238,44 @@
                 font-size: 3.5rem;
             }
 
-            p {
-                font-size: 1.1rem;
+            h2 {
+                font-size: 2.5rem;
             }
 
-            .partner-logos {
-                gap: 2rem;
+            p {
+                font-size: 1.2rem;
             }
+
+            .logo-row {
+                gap: 4rem;
+            }
+
+            .partner-logo {
+                height: 36px;
+            }
+
+            .video-container {
+                width: 95%;
+            }
+        }
+
+        /* Plyr Customizations */
+        .plyr--full-ui.plyr--video .plyr__control--overlaid {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2.5rem;
+        }
+
+        .plyr__control--overlaid svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .plyr--video {
+            border-radius: 40px;
+        }
+
+        :root {
+            --plyr-color-main: #000000;
         }
     </style>
 </head>
@@ -138,20 +287,97 @@
 
     <img src="./handproduct.png" class="bg-hand" alt="Human Operator Product">
 
-    <div class="container">
+    <section class="hero-section">
         <h1>We gave AI a body.</h1>
         <p>Human Operator is a human augmentation tool that allows AI to briefly take control of your body to help you
             learn or do things you cannot do.</p>
-    </div>
+    </section>
 
-    <div class="footer">
+    <div class="logo-row">
         <img src="./designintelllogo.png" alt="Design Intell" class="partner-logo">
         <img src="./hardmodelogo.png" alt="Hard Mode" class="partner-logo">
         <img src="./advancinghumansai.png" alt="Advancing Humans" class="partner-logo">
     </div>
 
+    <div class="hero-video-container" style="width: 100%; max-width: 1400px; margin: 6rem auto 2rem; padding: 0 2rem;">
+        <div class="video-container"
+            style="width: 100%; margin: 0; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border-radius: 40px; overflow: hidden;">
+            <video id="player" playsinline controls data-poster="./vids/thumb.png">
+                <source src="./vids/1080_humanoperator.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+
+    <section class="narrative-section">
+        <div class="bites">Meet your physical co-pilot.</div>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./vids/1080_oh_piano_compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="bites">Learn anything, instantly.</div>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./vids/1080_oh_drinkpourting_compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="bites">Mastery without the years.</div>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./vids/1080_oh_rockpaperscissors_compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="bites">Digital intent, embodied action.</div>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./vids/1080_oh_drawing_compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="bites">Humanity, augmented.</div>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./vids/1080_oh_waving_compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-content">
+                <h2 style="font-size: 2rem;">The future of human capability.</h2>
+                <p style="margin: 0; font-size: 1rem; color: #999; margin-top: 2rem;">HUMAN OPERATOR | AN MIT MEDIA LAB
+                    HACKATHON PROJECT</p>
+            </div>
+            <div class="team-credits">
+                <a href="https://peterhe.dev/" target="_blank">Peter He</a>
+                <a href="https://www.linkedin.com/in/yutong-wu-4b66661b5/" target="_blank">Yutong Wu</a>
+                <a href="https://aneall.github.io/" target="_blank">Ashley Neall</a>
+                <a href="https://www.linkedin.com/in/danielkaijzer/" target="_blank">Daniel Kaijzer</a>
+                <a href="https://valdemardanry.com/" target="_blank">Valdemar Danry</a>
+                <a href="https://seanhardestylewis.com" target="_blank">Sean Hardesty Lewis</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="https://github.com/danielkaijzer/Human-Operator" target="_blank" class="github-link"
+                aria-label="GitHub Repository">
+                <i data-lucide="github" style="width: 24px; height: 24px;"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>
         lucide.createIcons();
+        const player = new Plyr('#player', {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            hideControls: true,
+            loop: { active: true }
+        });
     </script>
 </body>
 
