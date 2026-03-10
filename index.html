@@ -173,8 +173,8 @@
             margin: 4rem auto;
             border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
-            background: #000;
+            box-shadow: 0 20px 120px rgba(0, 0, 0, 0.05);
+            background: var(--bg);
         }
 
         video {
@@ -319,10 +319,17 @@
 
     <div class="hero-video-container" style="width: 100%; max-width: 1400px; margin: 6rem auto 2rem; padding: 0 2rem;">
         <div class="video-container"
-            style="width: 100%; margin: 0; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border-radius: 40px; overflow: hidden;">
-            <video id="player" playsinline controls data-poster="./vids/thumb.png">
-                <source src="./vids/1080_humanoperator.mp4" type="video/mp4" />
-            </video>
+            style="width: 100%; margin: 0; box-shadow: 0 30px 150px rgba(0,0,0,0.1); border-radius: 40px; overflow: hidden;">
+            <div class="iframe-wrapper"
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 40px;">
+                <iframe
+                    src="https://www.youtube.com/embed/fCLxENGs7CY?autoplay=0&loop=1&playlist=fCLxENGs7CY&controls=1&rel=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 40px;">
+                </iframe>
+            </div>
         </div>
     </div>
 
@@ -391,11 +398,7 @@
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script>
         lucide.createIcons();
-        const player = new Plyr('#player', {
-            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-            hideControls: true,
-            loop: { active: true }
-        });
+        const player = null; // Removed Plyr for YouTube to fix Error 153
     </script>
 </body>
 
