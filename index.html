@@ -7,16 +7,12 @@
     <title>Human Operator | We gave AI a body</title>
     <meta name="description"
         content="Human Operator is a human augmentation tool that allows AI to briefly take control of your body to help you learn or do things you cannot do.">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://humanoperator.org/">
     <meta property="og:title" content="Human Operator | We gave AI a body">
     <meta property="og:description"
         content="Human Operator is a human augmentation tool that allows AI to briefly take control of your body to help you learn or do things you cannot do.">
     <meta property="og:image" content="https://humanoperator.org/share.png">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://humanoperator.org/">
     <meta name="twitter:title" content="Human Operator | We gave AI a body">
@@ -26,380 +22,366 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
     <link rel="shortcut icon" href="./favicon.ico">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --text-dim: #666666;
-            --accent: #000000;
-            --border: #f0f0f0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            width: 100vw;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 6rem;
-            line-height: 1.05;
-            margin-bottom: 2rem;
-            letter-spacing: -0.04em;
-        }
-
-        h2 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 4rem;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            font-size: 1.6rem;
-            color: var(--text-dim);
-            max-width: 800px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-
-        section {
-            width: 100%;
-            padding: 10rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-section {
-            height: 100vh;
-            justify-content: center;
-        }
-
-        .hero-section p {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .nav {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 3rem;
-            z-index: 10;
-        }
-
-        .logo-main {
-            height: 52px;
-            width: auto;
-        }
-
-        .bg-hand {
-            position: absolute;
-            right: -2%;
-            top: 25%;
-            height: 85vh;
-            width: auto;
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.7;
-            filter: saturate(0.8);
-        }
-
-        .logo-row {
-            padding: 8rem 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8rem;
-            flex-wrap: wrap;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .partner-logo {
-            height: 54px;
-            /* Even bigger */
-            width: auto;
-            opacity: 0.6;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .partner-logo:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .narrative-section {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .video-container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 4rem auto;
-            border-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 20px 120px rgba(0, 0, 0, 0.05);
-            background: var(--bg);
-        }
-
-        video {
-            width: 100%;
-            display: block;
-        }
-
-        .bites {
-            margin: 6rem 0;
-            font-size: 2.5rem;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-            color: var(--accent);
-            letter-spacing: -0.02em;
-        }
-
-        footer {
-            padding: 10rem 2rem 6rem;
-            /* Reduced bottom padding */
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-            /* Reduced gap */
-            border-top: 1px solid var(--border);
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .footer-content {
-            text-align: left;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .github-link {
-            color: var(--text-dim);
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .github-link:hover {
-            color: var(--text);
-            transform: scale(1.1);
-        }
-
-        .team-credits {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .team-credits a {
-            font-size: 1rem;
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .team-credits a:hover {
-            text-decoration: underline;
-            color: var(--text);
-        }
-
-        @media (max-width: 968px) {
-            h1 {
-                font-size: 3.5rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
-
-            .logo-row {
-                gap: 4rem;
-            }
-
-            .partner-logo {
-                height: 36px;
-            }
-
-            .video-container {
-                width: 95%;
-            }
-        }
-
-        /* Plyr Customizations */
-        .plyr--full-ui.plyr--video .plyr__control--overlaid {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 2.5rem;
-        }
-
-        .plyr__control--overlaid svg {
-            width: 40px;
-            height: 40px;
-        }
-
-        .plyr--video {
-            border-radius: 40px;
-        }
-
-        :root {
-            --plyr-color-main: #000000;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/site.css">
+    <script defer src="./scripts/lucide.min.js"></script>
+    <script defer src="./scripts/main.js"></script>
 </head>
 
 <body>
-    <div class="nav">
-        <img src="./logohocrop.png" alt="Human Operator" class="logo-main">
-    </div>
-
-    <img src="./handproduct.png" class="bg-hand" alt="Human Operator Product">
-
-    <section class="hero-section">
-        <h1>We gave AI a body.</h1>
-        <p>Human Operator is a human augmentation tool that allows AI to briefly take control of your body to help you
-            learn or do things you cannot do.</p>
-    </section>
-
-    <div class="logo-row">
-        <img src="./designintelllogo.png" alt="Design Intell" class="partner-logo">
-        <img src="./hardmodewinner.png" alt="Hard Mode Winner" class="partner-logo">
-        <img src="./advancinghumansai.png" alt="Advancing Humans" class="partner-logo">
-    </div>
-
-    <div class="hero-video-container" style="width: 100%; max-width: 1400px; margin: 6rem auto 2rem; padding: 0 2rem;">
-        <div class="video-container"
-            style="width: 100%; margin: 0; box-shadow: 0 30px 150px rgba(0,0,0,0.1); border-radius: 40px; overflow: hidden;">
-            <div class="iframe-wrapper"
-                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 40px;">
-                <iframe
-                    src="https://www.youtube.com/embed/fCLxENGs7CY?autoplay=0&loop=1&playlist=fCLxENGs7CY&controls=1&rel=0"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 40px;">
-                </iframe>
+    <header class="fixed inset-x-0 top-0 z-40">
+        <div class="site-shell py-4 md:py-5">
+            <div class="site-header-bar" data-header-shell data-scrolled="off">
+                <a href="./" aria-label="Human Operator home">
+                    <img src="./logohocrop.png" alt="Human Operator" class="h-11 w-auto md:h-[3.25rem]">
+                </a>
+                <div class="hidden items-center gap-6 text-base text-zinc-500 md:flex md:text-[1.05rem]">
+                    <a href="https://github.com/danielkaijzer/Human-Operator" target="_blank" rel="noreferrer"
+                        class="text-link">GitHub</a>
+                    <a href="./presskit/" class="text-link">Press Kit</a>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <section class="narrative-section">
-        <div class="bites">Meet your physical co-pilot.</div>
-
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="./vids/1080_oh_piano_compressed.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="bites">Learn anything, instantly.</div>
-
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="./vids/1080_oh_drinkpourting_compressed.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="bites">Mastery without the years.</div>
-
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="./vids/1080_oh_rockpaperscissors_compressed.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="bites">Digital intent, embodied action.</div>
-
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="./vids/1080_oh_drawing_compressed.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="bites">Humanity, augmented.</div>
-
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="./vids/1080_oh_waving_compressed.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-top">
-            <div class="footer-content">
-                <h2 style="font-size: 2rem;">The future of human capability.</h2>
-                <p style="margin: 0; font-size: 1rem; color: #999; margin-top: 2rem;">HUMAN OPERATOR | AN MIT MEDIA LAB
-                    HACKATHON PROJECT</p>
+    <main>
+        <section class="relative flex min-h-screen items-center justify-center overflow-hidden">
+            <img src="./handproduct.png" alt="Human Operator hardware"
+                class="pointer-events-none absolute -right-8 top-[18%] hidden h-[78vh] w-auto opacity-70 saturate-75 lg:block">
+            <div class="site-shell relative z-10 flex justify-center py-28 text-center">
+                <div class="max-w-4xl">
+                    <h1
+                        class="font-display text-[clamp(3.5rem,11vw,6rem)] leading-[0.98] tracking-[-0.05em] font-semibold text-zinc-950">
+                        We gave AI a body.
+                    </h1>
+                    <p
+                        class="mx-auto mt-8 max-w-3xl rounded-[1.5rem] border border-black/5 bg-white/70 px-6 py-5 text-lg leading-8 text-zinc-700 backdrop-blur md:px-8 md:py-6 md:text-2xl md:leading-9">
+                        Human Operator is a human augmentation tool that allows AI to briefly take control of your body
+                        to help you learn or do things you cannot do.
+                    </p>
+                </div>
             </div>
-            <div class="team-credits">
-                <a href="https://peterhe.dev/" target="_blank">Peter He</a>
-                <a href="https://www.linkedin.com/in/yutong-wu-4b66661b5/" target="_blank">Yutong Wu</a>
-                <a href="https://aneall.github.io/" target="_blank">Ashley Neall</a>
-                <a href="https://www.linkedin.com/in/danielkaijzer/" target="_blank">Daniel Kaijzer</a>
-                <a href="https://valdemardanry.com/" target="_blank">Valdemar Danry</a>
-                <a href="https://seanhardestylewis.com" target="_blank">Sean Hardesty Lewis</a>
+        </section>
+
+        <section class="border-y border-zinc-200 bg-white">
+            <div
+                class="site-shell flex flex-wrap items-center justify-center gap-x-12 gap-y-8 py-14 md:gap-x-18 md:py-16">
+                <img src="./assets/images/logos/mit-media-lab-logo.png" alt="MIT Media Lab"
+                    class="h-10 w-auto opacity-55 transition duration-300 hover:opacity-100 md:h-12">
+                <img src="./hardmodewinner.png" alt="Hard Mode Winner"
+                    class="h-12 w-auto opacity-55 transition duration-300 hover:opacity-100 md:h-14">
+                <img src="./advancinghumansai.png" alt="Advancing Humans AI"
+                    class="h-10 w-auto opacity-55 transition duration-300 hover:opacity-100 md:h-12">
+                <img src="./designintelllogo.png" alt="Design Intell"
+                    class="h-10 w-auto opacity-55 transition duration-300 hover:opacity-100 md:h-12">
+            </div>
+        </section>
+
+        <section class="site-shell py-12 md:py-16">
+            <div class="overflow-hidden rounded-[2rem] bg-black shadow-[0_30px_140px_rgba(0,0,0,0.12)]">
+                <div class="relative h-0 overflow-hidden pb-[56.25%]">
+                    <iframe
+                        src="https://www.youtube.com/embed/fCLxENGs7CY?autoplay=0&loop=1&playlist=fCLxENGs7CY&controls=1&rel=0"
+                        title="Human Operator demo video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="absolute inset-0 h-full w-full"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-shell pb-20 md:pb-24">
+            <div class="max-w-5xl">
+                <p class="eyebrow">From the Project</p>
+                <div class="mt-5 grid gap-6 lg:grid-cols-2">
+                    <p class="text-lg leading-8 text-zinc-700 md:text-xl md:leading-9">
+                        <strong>Human Operator</strong> is a human augmentation tool that allows AI to briefly take
+                        control of your body to help you learn and do things you normally cannot do. To do this, it
+                        uses a vision-language model for human motor control through electrical muscle stimulation.
+                    </p>
+                    <p class="text-lg leading-8 text-zinc-700 md:text-xl md:leading-9">
+                        Vision-based commands are generated through open-ended speech input to control finger and wrist
+                        stimulation for intuitive on-body interaction. It is a working prototype that won the Learn
+                        Track at MIT Hard Mode 2026.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-y border-zinc-200 bg-zinc-50/70">
+            <div class="demo-rail" data-scroll-rail>
+                <div class="demo-stage" data-scroll-stage>
+                    <div class="site-shell flex h-full items-center">
+                        <div class="demo-frame" data-scroll-frame>
+                            <div class="demo-track" data-scroll-track>
+                                <article class="demo-card">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="./vids/1080_oh_piano_compressed.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="demo-card-body">
+                                        <h2
+                                            class="font-display text-[2rem] leading-[1.02] tracking-[-0.04em] font-semibold">
+                                            Meet your physical co-pilot.
+                                        </h2>
+                                        <p class="text-sm leading-6 text-zinc-600 md:text-base md:leading-7">
+                                            AI guides a short sequence of finger movement to play a simple melody.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="demo-card">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="./vids/1080_oh_drinkpourting_compressed.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="demo-card-body">
+                                        <h2
+                                            class="font-display text-[2rem] leading-[1.02] tracking-[-0.04em] font-semibold">
+                                            Learn anything, instantly.
+                                        </h2>
+                                        <p class="text-sm leading-6 text-zinc-600 md:text-base md:leading-7">
+                                            Voice and visual context are turned into a guided hand action in real time.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="demo-card">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="./vids/1080_oh_rockpaperscissors_compressed.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="demo-card-body">
+                                        <h2
+                                            class="font-display text-[2rem] leading-[1.02] tracking-[-0.04em] font-semibold">
+                                            Mastery without the years.
+                                        </h2>
+                                        <p class="text-sm leading-6 text-zinc-600 md:text-base md:leading-7">
+                                            Small EMS pulses can sequence the fingers into learned gestures and
+                                            positions.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="demo-card">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="./vids/1080_oh_drawing_compressed.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="demo-card-body">
+                                        <h2
+                                            class="font-display text-[2rem] leading-[1.02] tracking-[-0.04em] font-semibold">
+                                            Digital intent, embodied action.
+                                        </h2>
+                                        <p class="text-sm leading-6 text-zinc-600 md:text-base md:leading-7">
+                                            Speech, camera input, model reasoning, and EMS output all feed the same
+                                            loop.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="demo-card">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="./vids/1080_oh_waving_compressed.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="demo-card-body">
+                                        <h2
+                                            class="font-display text-[2rem] leading-[1.02] tracking-[-0.04em] font-semibold">
+                                            Humanity, augmented.
+                                        </h2>
+                                        <p class="text-sm leading-6 text-zinc-600 md:text-base md:leading-7">
+                                            Even a simple wave shows the basic idea of AI-assisted physical guidance.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-shell py-20 md:py-24">
+            <div class="max-w-4xl">
+                <p class="eyebrow">How It Works</p>
+                <h2 class="mt-3 font-display text-4xl leading-none tracking-[-0.04em] md:text-6xl">
+                    Voice to movement.
+                </h2>
+                <p class="mt-5 max-w-3xl text-lg leading-8 text-zinc-700 md:text-xl md:leading-9">
+                    A spoken command becomes a guided physical action through camera input, model interpretation,
+                    hardware control, and EMS output.
+                </p>
+            </div>
+
+            <div
+                class="mt-10 rounded-[2rem] border border-zinc-200 bg-zinc-50/70 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.04)] md:p-6">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+                    <article
+                        class="relative flex min-h-[15rem] flex-col rounded-[1.5rem] border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(0,0,0,0.045)]">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 text-zinc-700">
+                                <i data-lucide="mic" class="h-5 w-5"></i>
+                            </div>
+                            <span
+                                class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-zinc-400">01</span>
+                        </div>
+                        <h3 class="mt-5 font-display text-[1.8rem] leading-none tracking-[-0.03em]">Voice input</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-600">
+                            The user says what they want to do.
+                        </p>
+                        <i data-lucide="arrow-right"
+                            class="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-zinc-300 lg:block"></i>
+                    </article>
+
+                    <article
+                        class="relative flex min-h-[15rem] flex-col rounded-[1.5rem] border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(0,0,0,0.045)]">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 text-zinc-700">
+                                <i data-lucide="camera" class="h-5 w-5"></i>
+                            </div>
+                            <span
+                                class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-zinc-400">02</span>
+                        </div>
+                        <h3 class="mt-5 font-display text-[1.8rem] leading-none tracking-[-0.03em]">POV camera</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-600">
+                            A head-mounted camera captures the scene in front of them using a VLM.
+                        </p>
+                        <i data-lucide="arrow-right"
+                            class="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-zinc-300 lg:block"></i>
+                    </article>
+
+                    <article
+                        class="relative flex min-h-[15rem] flex-col rounded-[1.5rem] border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(0,0,0,0.045)]">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 text-zinc-700">
+                                <i data-lucide="bot" class="h-5 w-5"></i>
+                            </div>
+                            <span
+                                class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-zinc-400">03</span>
+                        </div>
+                        <h3 class="mt-5 font-display text-[1.8rem] leading-none tracking-[-0.03em]">Model plan</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-600">
+                            The model reads the request and scene, then decides on a motor action.
+                        </p>
+                        <i data-lucide="arrow-right"
+                            class="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-zinc-300 lg:block"></i>
+                    </article>
+
+                    <article
+                        class="relative flex min-h-[15rem] flex-col rounded-[1.5rem] border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(0,0,0,0.045)]">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 text-zinc-700">
+                                <i data-lucide="cpu" class="h-5 w-5"></i>
+                            </div>
+                            <span
+                                class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-zinc-400">04</span>
+                        </div>
+                        <h3 class="mt-5 font-display text-[1.8rem] leading-none tracking-[-0.03em]">Relay control</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-600">
+                            Arduino and relays turn that plan into specific stimulation signals for EMS.
+                        </p>
+                        <i data-lucide="arrow-right"
+                            class="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-zinc-300 lg:block"></i>
+                    </article>
+
+                    <article
+                        class="flex min-h-[15rem] flex-col rounded-[1.5rem] border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(0,0,0,0.045)]">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 text-zinc-700">
+                                <i data-lucide="zap" class="h-5 w-5"></i>
+                            </div>
+                            <span
+                                class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-zinc-400">05</span>
+                        </div>
+                        <h3 class="mt-5 font-display text-[1.8rem] leading-none tracking-[-0.03em]">EMS output</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-600">
+                            Electrical stimulation guides a brief finger or wrist movement.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-shell pb-20 md:pb-24">
+            <div class="max-w-4xl border-t border-zinc-200 pt-10">
+                <h3 class="font-display text-3xl tracking-[-0.03em] font-semibold md:text-4xl">Acknowledgments</h3>
+                <p class="mt-4 text-lg leading-8 text-zinc-700">
+                    Inspired by research and systems from the
+                    <a href="https://lab.plopes.org/" target="_blank" rel="noreferrer"
+                        class="underline decoration-zinc-300 underline-offset-4 transition duration-200 hover:text-zinc-950 hover:decoration-zinc-500">Human Computer Integration Lab</a>
+                    at UChicago on neuromuscular interfaces and electrode placement optimization.
+                </p>
+                <ul class="mt-6 space-y-4 text-base leading-7 text-zinc-600">
+                    <li>
+                        <a href="https://github.com/humancomputerintegration/BOH-Electro-Tactile" target="_blank"
+                            rel="noreferrer"
+                            class="underline decoration-zinc-300 underline-offset-4 transition duration-200 hover:text-zinc-950 hover:decoration-zinc-500">
+                            Full-Hand Electro Tactile Feedback without Obstructing Palmar Side of Hand
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2505.10648" target="_blank" rel="noreferrer"
+                            class="underline decoration-zinc-300 underline-offset-4 transition duration-200 hover:text-zinc-950 hover:decoration-zinc-500">
+                            Generative Muscle Stimulation: Providing Users with Physical Assistance by Constraining
+                            Multimodal-AI with Embodied Knowledge
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://lab.plopes.org/published/2021-CHI-BackHandEMS.pdf" target="_blank"
+                            rel="noreferrer"
+                            class="underline decoration-zinc-300 underline-offset-4 transition duration-200 hover:text-zinc-950 hover:decoration-zinc-500">
+                            Increasing Electrical Muscle Stimulation's Dexterity by means of Back of the Hand Actuation
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-zinc-200">
+        <div class="site-shell flex flex-col gap-10 py-14 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-xl">
+                <h2 class="font-display text-3xl leading-none tracking-[-0.04em] font-semibold md:text-4xl">
+                    Where AI becomes motor control.
+                </h2>
+                <div class="mt-6 text-zinc-400">
+                    <img src="./logohocrop.png" alt="Human Operator" class="h-6 w-auto opacity-75">
+                    <p class="mt-2 text-sm">An MIT Media Lab hackathon project</p>
+                </div>
+            </div>
+
+            <div class="grid gap-2 text-right text-sm text-zinc-500 md:text-base">
+                <a href="https://peterhe.dev/" target="_blank" rel="noreferrer" class="text-link">Peter He</a>
+                <a href="https://www.linkedin.com/in/yutong-wu-4b66661b5/" target="_blank" rel="noreferrer"
+                    class="text-link">Yutong Wu</a>
+                <a href="https://aneall.github.io/" target="_blank" rel="noreferrer" class="text-link">Ashley
+                    Neall</a>
+                <a href="https://www.linkedin.com/in/danielkaijzer/" target="_blank" rel="noreferrer"
+                    class="text-link">Daniel Kaijzer</a>
+                <a href="https://valdemardanry.com/" target="_blank" rel="noreferrer" class="text-link">Valdemar
+                    Danry</a>
+                <a href="https://seanhardestylewis.com" target="_blank" rel="noreferrer" class="text-link">Sean
+                    Hardesty Lewis</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <a href="https://github.com/danielkaijzer/Human-Operator" target="_blank" class="github-link"
-                aria-label="GitHub Repository">
-                <i data-lucide="github" style="width: 24px; height: 24px;"></i>
+
+        <div class="site-shell flex items-center justify-center gap-6 pb-12 text-base text-zinc-500 md:text-lg">
+            <a href="https://github.com/danielkaijzer/Human-Operator" target="_blank" rel="noreferrer"
+                class="inline-flex items-center gap-2 text-link">
+                <i data-lucide="github" class="h-4 w-4"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="./presskit/" class="inline-flex items-center text-link">
+                <span>Press Kit</span>
             </a>
         </div>
     </footer>
-
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script>
-        lucide.createIcons();
-        const player = null; // Removed Plyr for YouTube to fix Error 153
-    </script>
 </body>
 
 </html>
